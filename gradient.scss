@@ -1,12 +1,16 @@
 $nr: 20; // number of rays
 $p: 100%/$nr; // percent of circle allocated to a ray and gap after
-$m: repeating-conic-gradient(#000 0% .5*$p, transparent 0% $p); // mask
-
+$m: repeating-conic-gradient(
+      rgba(#000, var(--a)) 0% .5*$p, 
+      rgba(#000, calc(1 - var(--a))) 0% $p); //mask
 .rays {
   width: 80vmin; height: 80vmin;
   border-radius: 50%;
   background: linear-gradient(#b53, #f90);
   -webkit-mask: $m;
           mask: $m;
+  animation: a 2s linear infinite alternate;
 }
+
+@keyframes a { to { --a: 0 } }
 

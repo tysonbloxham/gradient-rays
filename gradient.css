@@ -3,7 +3,12 @@
   height: 80vmin;
   border-radius: 50%;
   background: linear-gradient(#b53, #f90);
-  -webkit-mask: repeating-conic-gradient(#000 0% 2.5%, transparent 0% 5%);
-  mask: repeating-conic-gradient(#000 0% 2.5%, transparent 0% 5%); }
+  -webkit-mask: repeating-conic-gradient(rgba(0, 0, 0, var(--a)) 0% 2.5%, rgba(0, 0, 0, calc(1 - var(--a))) 0% 5%);
+  mask: repeating-conic-gradient(rgba(0, 0, 0, var(--a)) 0% 2.5%, rgba(0, 0, 0, calc(1 - var(--a))) 0% 5%);
+  animation: a 2s linear infinite alternate; }
+
+@keyframes a {
+  to {
+    --a: 0 ; } }
 
 /*# sourceMappingURL=gradient.css.map */
