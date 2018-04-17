@@ -2,13 +2,23 @@
   width: 80vmin;
   height: 80vmin;
   border-radius: 50%;
-  background: linear-gradient(#b53, #f90);
-  -webkit-mask: repeating-conic-gradient(rgba(0, 0, 0, var(--a)) 0% 2.5%, rgba(0, 0, 0, calc(1 - var(--a))) 0% 5%);
-  mask: repeating-conic-gradient(rgba(0, 0, 0, var(--a)) 0% 2.5%, rgba(0, 0, 0, calc(1 - var(--a))) 0% 5%);
-  animation: a 2s linear infinite alternate; }
+  background: linear-gradient(#f90, #95a);
+  -webkit-mask: repeating-conic-gradient(rgba(0, 0, 0, var(--a0)) 0%, rgba(0, 0, 0, var(--a1)) 2.5%, rgba(0, 0, 0, var(--a2)) 0%, rgba(0, 0, 0, var(--a3)) 5%);
+  animation: a 1s infinite alternate;
+  animation-name: a0, a1, a2, a3;
+  animation-timing-function: cubic-bezier(0.57, 0.05, 0.67, 0.19), cubic-bezier(0.21, 0.61, 0.35, 1); }
 
-@keyframes a {
+@keyframes a0 {
   to {
-    --a: 0 ; } }
+    --a0: 0 ; } }
+@keyframes a1 {
+  to {
+    --a1: 0 ; } }
+@keyframes a2 {
+  to {
+    --a2: 1 ; } }
+@keyframes a3 {
+  to {
+    --a3: 1 ; } }
 
 /*# sourceMappingURL=gradient.css.map */

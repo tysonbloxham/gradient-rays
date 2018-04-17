@@ -4,13 +4,21 @@ $m: repeating-conic-gradient(
       rgba(#000, var(--a)) 0% .5*$p, 
       rgba(#000, calc(1 - var(--a))) 0% $p); //mask
 .rays {
-  width: 80vmin; height: 80vmin;
-  border-radius: 50%;
-  background: linear-gradient(#b53, #f90);
-  -webkit-mask: $m;
-          mask: $m;
-  animation: a 2s linear infinite alternate;
+	width: 80vmin;
+	height: 80vmin;
+	border-radius: 50%;
+	background: linear-gradient(#f90, #95a);
+	-webkit-mask: repeating-conic-gradient(
+		rgba(#000, var(--a0)) 0%, rgba(#000, var(--a1)) .5*$p, 
+		rgba(#000, var(--a2)) 0%, rgba(#000, var(--a3)) $p);
+	animation: a 1s infinite alternate;
+	animation-name: a0, a1, a2, a3;
+	animation-timing-function: 
+		/* easings from easings.net */
+		cubic-bezier(.57, .05, .67, .19) /* easeInCubic */, 
+		cubic-bezier(.21, .61, .35, 1) /* easeOutCubic */
 }
 
-@keyframes a { to { --a: 0 } }
-
+@for $i from 0 to 4 {
+	@keyframes a#{$i} { to { --a#{$i}: #{floor($i/2)} } }
+}
