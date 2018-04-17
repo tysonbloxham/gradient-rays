@@ -1,6 +1,10 @@
+$nr: 20; // number of rays
+$p: 100%/$nr; // percent of circle allocated to a ray and gap after
+
 .rays {
   width: 80vmin; height: 80vmin;
   border-radius: 50%;
   background: linear-gradient(#b53, #f90);
+  mask: repeating-conic-gradient(#000 0% .5*$p, transparent 0% $p);
 }
 
