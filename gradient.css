@@ -3,6 +3,7 @@
   height: 80vmin;
   border-radius: 50%;
   background: linear-gradient(#b53, #f90);
+  -webkit-mask: repeating-conic-gradient(#000 0% 2.5%, transparent 0% 5%);
   mask: repeating-conic-gradient(#000 0% 2.5%, transparent 0% 5%); }
 
 /*# sourceMappingURL=gradient.css.map */
